@@ -4,12 +4,12 @@ const Step1Content = () => {
   return (
     <>
       <div className="bg-white px-6 py-8 rounded-xl mx-4 -mt-20">
-        <h1 className="text-2xl mb-[9px] font-bold">Personal Info</h1>
-        <p className="text-base mb-[22px] text-[#9699ab]">
+        <h1 className="text-2xl mb-[8px] font-bold text-heading">Personal Info</h1>
+        <p className="text-base mb-4 text-paragraph">
           Please provide your name, email address, and phone number
         </p>
 
-        <div className="mb-3">
+        <div className="mb-2">
           <InputGroup
             name="name"
             label="Name"
@@ -18,7 +18,7 @@ const Step1Content = () => {
           />
         </div>
 
-        <div className="mb-3">
+        <div className="mb-2">
           <InputGroup
             name="email"
             label="Email Address"

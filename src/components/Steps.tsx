@@ -21,7 +21,7 @@ const Steps = () => {
   ];
 
   const Step = (step: Step) => {
-    const dynamicClasses = step.isActive ? "bg-[#bfe2fd]" : "border text-white";
+    const dynamicClasses = step.isActive ? "bg-[#bfe2fd] text-heading" : "border text-white";
 
     return (
       <span
@@ -34,7 +34,7 @@ const Steps = () => {
 
   return (
     <>
-      <div className="mt-8 flex justify-between gap-3">
+      <div className="mt-8 flex justify-between gap-x-4">
         {steps.map((step) => Step(step))}
       </div>
     </>
