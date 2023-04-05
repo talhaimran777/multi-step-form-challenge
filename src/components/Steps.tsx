@@ -4,7 +4,7 @@ const Steps = () => {
   const steps: Step[] = [
     {
       number: 1,
-      isActive: true,
+      isActive: false,
     },
     {
       number: 2,
@@ -12,7 +12,7 @@ const Steps = () => {
     },
     {
       number: 3,
-      isActive: false,
+      isActive: true,
     },
     {
       number: 4,
@@ -20,11 +20,14 @@ const Steps = () => {
     },
   ];
 
-  const Step = (step: Step) => {
-    const dynamicClasses = step.isActive ? "bg-[#bfe2fd] text-heading" : "border text-white";
+  const Step = (step: Step, idx: number) => {
+    const dynamicClasses = step.isActive
+      ? "bg-[#bfe2fd] text-heading"
+      : "border text-white";
 
     return (
       <span
+        key={idx}
         className={`h-8 w-8 rounded-full flex justify-center items-center ${dynamicClasses}`}
       >
         {step.number}
@@ -35,7 +38,7 @@ const Steps = () => {
   return (
     <>
       <div className="mt-8 flex justify-between gap-x-4">
-        {steps.map((step) => Step(step))}
+        {steps.map((step, idx) => Step(step, idx))}
       </div>
     </>
   );

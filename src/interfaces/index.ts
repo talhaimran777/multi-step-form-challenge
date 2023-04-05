@@ -9,4 +9,16 @@ export interface InputGroupProps {
 export interface Step {
   number: number;
   isActive: boolean;
+  key?: number;
+}
+
+export interface StepTextProps {
+  title: string;
+  description: string;
+}
+
+export interface AddonProps {
+  isActive: boolean;
+  title: string;
+  description: string;
 }
