@@ -1,3 +1,5 @@
+import {ReactNode} from "react";
+
 export interface InputGroupProps {
   name: string;
   label: string;
@@ -8,7 +10,6 @@ export interface InputGroupProps {
 
 export interface Step {
   number: number;
-  isActive: boolean;
   key?: number;
 }
 
@@ -32,4 +33,13 @@ export interface PlanInterface {
 
 export interface PlanProps extends PlanInterface {
   uniqueKey: number;
+}
+
+export interface ProviderProps {
+  children: ReactNode;
+}
+
+export interface ContextProps {
+  currentStep: number;
+  setCurrentStep: (value: number) => void;
 }

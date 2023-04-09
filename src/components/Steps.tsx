@@ -1,34 +1,35 @@
+import { useSteps } from "context-api/context";
 import { Step } from "interfaces/index";
 
+const steps: Step[] = [
+  {
+    number: 1,
+  },
+  {
+    number: 2,
+  },
+  {
+    number: 3,
+  },
+  {
+    number: 4,
+  },
+];
+
 const Steps = () => {
-  const steps: Step[] = [
-    {
-      number: 1,
-      isActive: true,
-    },
-    {
-      number: 2,
-      isActive: false,
-    },
-    {
-      number: 3,
-      isActive: false,
-    },
-    {
-      number: 4,
-      isActive: false,
-    },
-  ];
+  const { currentStep, setCurrentStep } = useSteps();
 
   const Step = (step: Step, idx: number) => {
-    const dynamicClasses = step.isActive
-      ? "bg-[#bfe2fd] text-heading"
-      : "border text-white";
+    const dynamicClasses =
+      step.number === currentStep
+        ? "bg-[#bfe2fd] text-heading"
+        : "border text-white";
 
     return (
       <span
         key={idx}
         className={`h-8 w-8 rounded-full flex justify-center items-center ${dynamicClasses}`}
+        onClick={() => setCurrentStep(step.number)}
       >
         {step.number}
       </span>

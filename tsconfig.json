@@ -18,7 +18,8 @@
       "components/*": ["./src/components/*"],
       "styles/*": ["./src/styles/*"],
       "images/*": ["./public/images/*"],
-      "interfaces/*": ["./src/interfaces/*"]
+      "interfaces/*": ["./src/interfaces/*"],
+      "context-api/*": ["./src/context/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

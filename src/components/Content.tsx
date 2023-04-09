@@ -1,6 +1,7 @@
 import Step1Content from "components/Step1Content";
 import Step2Content from "components/Step2Content";
 import Step3Content from "components/Step3Content";
+import { useSteps } from "context-api/context";
 
 const stepContent = (step: number) => {
   switch (step) {
@@ -16,11 +17,11 @@ const stepContent = (step: number) => {
 };
 
 const Content = () => {
-  const step = 1;
+  const { currentStep } = useSteps();
 
   return (
     <div className="bg-white px-6 py-8 rounded-xl mx-4 -mt-20">
-      {stepContent(step)}
+      {stepContent(currentStep)}
     </div>
   );
 };
