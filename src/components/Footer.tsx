@@ -1,15 +1,17 @@
-import { useSteps } from "context-api/context";
+import { useSteps } from "context-api/step";
+import { useForm } from "context-api/form";
 
 const Footer = () => {
-  const { currentStep, setCurrentStep, formik } = useSteps();
+  const { currentStep, setCurrentStep } = useSteps();
+  const { formik } = useForm();
 
   const onSubmit = () => {
     if (currentStep === 1) {
       formik.submitForm();
     } else {
-      currentStep !== 4 && setCurrentStep(currentStep + 1)
+      currentStep !== 4 && setCurrentStep(currentStep + 1);
     }
-  }
+  };
 
   return (
     <div

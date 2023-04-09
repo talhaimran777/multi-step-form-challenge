@@ -38,9 +38,20 @@ export interface ProviderProps {
   children: ReactNode;
 }
 
-export interface ContextProps {
+export interface StepContextProps {
   currentStep: number;
   setCurrentStep: (value: number) => void;
+}
+
+export interface FormData {
+  name: string;
+  email: string;
+  phoneNumber: string;
+}
+
+export interface FormContextProps {
   formik: any;
   setFormik: (value: any) => void;
+  data: FormData;
+  setData: (value: FormData) => void;
 }

@@ -1,22 +1,26 @@
 import InputGroup from "components/InputGroup";
 import StepText from "components/StepText";
 import * as Yup from "yup";
-import { useSteps } from "context-api/context";
+import { useSteps } from "context-api/step";
 import { useFormik } from "formik";
 import { useEffect } from "react";
+import { useForm } from "context-api/form";
+import { FormData } from "interfaces/index";
 
 const Step1Content = () => {
-  const { setFormik, setCurrentStep, currentStep } = useSteps();
+  const { setCurrentStep, currentStep } = useSteps();
+  const { setFormik, data, setData } = useForm();
+
   const formFormik = useFormik({
     initialValues: {
-      name: "",
-      email: "",
-      phoneNumber: "",
+      name: data.name,
+      email: data.email,
+      phoneNumber: data.phoneNumber,
     },
-    onSubmit: (values) => {
+    onSubmit: (values: FormData) => {
       if (values.name && values.email && values.phoneNumber) {
-        console.log("YOYO", JSON.stringify(values, null, 2));
         setCurrentStep(currentStep + 1);
+        setData(values);
       }
     },
     validationSchema: Yup.object({

@@ -1,4 +1,4 @@
-import { useSteps } from "context-api/context";
+import { useSteps } from "context-api/step";
 import { Step } from "interfaces/index";
 
 const steps: Step[] = [

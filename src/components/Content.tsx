@@ -2,7 +2,7 @@ import Step1Content from "components/Step1Content";
 import Step2Content from "components/Step2Content";
 import Step3Content from "components/Step3Content";
 import Step4Content from "components/Step4Content";
-import { useSteps } from "context-api/context";
+import { useSteps } from "context-api/step";
 
 const stepContent = (step: number) => {
   switch (step) {

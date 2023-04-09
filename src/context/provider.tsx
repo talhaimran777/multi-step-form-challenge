@@ -1,17 +1,25 @@
 import React from "react";
-import { ProviderProps } from "interfaces/index";
-import { Context } from "context-api/context";
+import { FormData, ProviderProps } from "interfaces/index";
+import { StepContext } from "context-api/step";
+import { FormContext } from "context-api/form";
 
 const Provider = ({ children }: ProviderProps) => {
+  const initialFormData = {
+    name: "",
+    email: "",
+    phoneNumber: "",
+  };
+
   const [currentStep, setCurrentStep] = React.useState<number>(1);
   const [formik, setFormik] = React.useState<any>(null);
+  const [data, setData] = React.useState<FormData>(initialFormData);
 
   return (
-    <Context.Provider
-      value={{ currentStep, setCurrentStep, formik, setFormik }}
-    >
-      {children}
-    </Context.Provider>
+    <StepContext.Provider value={{ currentStep, setCurrentStep }}>
+      <FormContext.Provider value={{ formik, setFormik, data, setData }}>
+        {children}
+      </FormContext.Provider>
+    </StepContext.Provider>
   );
 };
 
