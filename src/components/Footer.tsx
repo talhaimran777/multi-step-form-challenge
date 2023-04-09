@@ -12,14 +12,14 @@ const Footer = () => {
       {currentStep != 1 && (
         <button
           onClick={() => setCurrentStep(currentStep - 1)}
-          className="bg-[#022a5a] text-white py-3 px-4 rounded-md text-sm"
+          className="focus-visible:outline-none bg-[#022a5a] text-white py-3 px-4 rounded-md text-sm"
         >
           Go Back
         </button>
       )}
       <button
         onClick={() => currentStep !== 4 && setCurrentStep(currentStep + 1)}
-        className={`text-white py-3 px-4 rounded-md text-sm${
+        className={`focus-visible:outline-none text-white py-3 px-4 rounded-md text-sm${
           currentStep !== 4 ? " bg-[#022a5a]" : " bg-[#473dff]"
         }`}
       >
