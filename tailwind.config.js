@@ -13,7 +13,7 @@ module.exports = {
       colors: {
         heading: "#022959",
         paragraph: "#9699AA",
-      }
+      },
     },
   },
   plugins: [require("@tailwindcss/forms")],

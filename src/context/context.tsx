@@ -7,5 +7,5 @@ export const Context = createContext<ContextProps>({
 });
 
 export const useSteps = () => {
-    return useContext(Context);
-}
+  return useContext(Context);
+};

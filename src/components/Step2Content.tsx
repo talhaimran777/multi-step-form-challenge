@@ -12,9 +12,9 @@ const Step2Content = () => {
       <Plans />
       <div className="flex justify-between items-center bg-[#F8F9FF] py-[14px] px-14 mt-6 rounded-lg">
         <p className="text-sm font-medium  text-paragraph">Monthly</p>
-        <Toggler /> 
+        <Toggler />
         <p className="text-sm font-medium">Yearly</p>
-      </div> 
+      </div>
     </>
   );
 };
