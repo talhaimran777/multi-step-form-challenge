@@ -4,7 +4,7 @@ const Steps = () => {
   const steps: Step[] = [
     {
       number: 1,
-      isActive: false,
+      isActive: true,
     },
     {
       number: 2,
@@ -12,7 +12,7 @@ const Steps = () => {
     },
     {
       number: 3,
-      isActive: true,
+      isActive: false,
     },
     {
       number: 4,

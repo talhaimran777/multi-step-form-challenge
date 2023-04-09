@@ -22,3 +22,14 @@ export interface AddonProps {
   title: string;
   description: string;
 }
+
+export interface PlanInterface {
+  isActive: boolean;
+  title: string;
+  price: string;
+  image: string;
+}
+
+export interface PlanProps extends PlanInterface {
+  uniqueKey: number;
+}

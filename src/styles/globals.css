@@ -7,3 +7,12 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+input:checked ~ .dot {
+  transform: translateX(100%);
+  background-color: white;
+}
+
+input:checked ~ .test {
+  background-color: #022a5a;
+}
