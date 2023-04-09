@@ -6,6 +6,7 @@ export interface InputGroupProps {
   type: string;
   placeholder: string;
   inputClasses?: string;
+  formik: any;
 }
 
 export interface Step {
@@ -40,4 +41,6 @@ export interface ProviderProps {
 export interface ContextProps {
   currentStep: number;
   setCurrentStep: (value: number) => void;
+  formik: any;
+  setFormik: (value: any) => void;
 }

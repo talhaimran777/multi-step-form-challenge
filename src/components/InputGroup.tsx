@@ -7,6 +7,7 @@ const InputGroup: React.FC<InputGroupProps> = ({
   type,
   placeholder,
   inputClasses,
+  formik,
 }) => {
   return (
     <>
@@ -18,7 +19,12 @@ const InputGroup: React.FC<InputGroupProps> = ({
         name={name}
         placeholder={placeholder}
         className={`block border rounded-md py-2 px-4 w-full text-[15px] font-medium text-paragraph ${inputClasses}`}
+        onChange={formik.handleChange}
+        value={formik.values[name]}
       />
+      {formik.touched[name] && formik.errors[name] && (
+        <span className="text-red-400">{formik.errors[name]}</span>
+      )}
     </>
   );
 };

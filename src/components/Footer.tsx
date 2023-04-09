@@ -1,7 +1,15 @@
 import { useSteps } from "context-api/context";
 
 const Footer = () => {
-  const { currentStep, setCurrentStep } = useSteps();
+  const { currentStep, setCurrentStep, formik } = useSteps();
+
+  const onSubmit = () => {
+    if (currentStep === 1) {
+      formik.submitForm();
+    } else {
+      currentStep !== 4 && setCurrentStep(currentStep + 1)
+    }
+  }
 
   return (
     <div
@@ -18,7 +26,7 @@ const Footer = () => {
         </button>
       )}
       <button
-        onClick={() => currentStep !== 4 && setCurrentStep(currentStep + 1)}
+        onClick={onSubmit}
         className={`focus-visible:outline-none text-white py-3 px-4 rounded-md text-sm${
           currentStep !== 4 ? " bg-[#022a5a]" : " bg-[#473dff]"
         }`}
