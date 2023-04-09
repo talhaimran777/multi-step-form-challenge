@@ -31,9 +31,7 @@ export interface PlanInterface {
   image: string;
 }
 
-export interface PlanProps extends PlanInterface {
-  uniqueKey: number;
-}
+export interface PlanProps extends PlanInterface {}
 
 export interface ProviderProps {
   children: ReactNode;

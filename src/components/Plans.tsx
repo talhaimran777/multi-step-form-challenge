@@ -30,13 +30,14 @@ const Plans = () => {
   return (
     <>
       {plans.map((plan, idx) => (
-        <Plan
-          uniqueKey={idx}
-          title={plan.title}
-          isActive={plan.isActive}
-          price={plan.price}
-          image={plan.image}
-        />
+        <div key={idx}>
+          <Plan
+            title={plan.title}
+            isActive={plan.isActive}
+            price={plan.price}
+            image={plan.image}
+          />
+        </div>
       ))}
     </>
   );
