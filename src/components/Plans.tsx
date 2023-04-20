@@ -9,19 +9,47 @@ const Plans = () => {
   const plans: PlanInterface[] = [
     {
       title: "Arcade",
-      price: "$9/mo",
+      pricing: {
+        monthly: {
+          price: 9,
+          pricePostfix: "/mo",
+        },
+        yearly: {
+          price: 90,
+          pricePostfix: "/yr",
+        },
+      },
       isActive: true,
       image: ArcadeIcon,
     },
     {
       title: "Advanced",
-      price: "$12/mo",
+      pricing: {
+        monthly: {
+          price: 12,
+          pricePostfix: "/mo",
+        },
+        yearly: {
+          price: 120,
+          pricePostfix: "/yr",
+        },
+      },
       isActive: false,
       image: AdvancedIcon,
     },
     {
       title: "Pro",
-      price: "$15/mo",
+      pricing: {
+        monthly: {
+          price: 15,
+          pricePostfix: "/mo",
+        },
+        yearly: {
+          price: 150,
+          pricePostfix: "/yr",
+        },
+      },
+
       isActive: false,
       image: ProIcon,
     },
@@ -34,7 +62,7 @@ const Plans = () => {
           <Plan
             title={plan.title}
             isActive={plan.isActive}
-            price={plan.price}
+            pricing={plan.pricing}
             image={plan.image}
           />
         </div>

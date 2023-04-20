@@ -1,24 +1,25 @@
-import React from "react";
-import { FormData, ProviderProps } from "interfaces/index";
+import { AppStateContext } from "context-api/app-state-context";
 import { StepContext } from "context-api/step";
-import { FormContext } from "context-api/form";
+import { AppState, PlanTypes, ProviderProps } from "interfaces/index";
+import React from "react";
 
 const Provider = ({ children }: ProviderProps) => {
   const initialFormData = {
     name: "",
     email: "",
     phoneNumber: "",
+    planType: PlanTypes.Monthly,
   };
 
   const [currentStep, setCurrentStep] = React.useState<number>(1);
   const [formik, setFormik] = React.useState<any>(null);
-  const [data, setData] = React.useState<FormData>(initialFormData);
+  const [data, setData] = React.useState<AppState>(initialFormData);
 
   return (
     <StepContext.Provider value={{ currentStep, setCurrentStep }}>
-      <FormContext.Provider value={{ formik, setFormik, data, setData }}>
+      <AppStateContext.Provider value={{ formik, setFormik, data, setData }}>
         {children}
-      </FormContext.Provider>
+      </AppStateContext.Provider>
     </StepContext.Provider>
   );
 };

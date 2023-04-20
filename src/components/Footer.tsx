@@ -1,9 +1,9 @@
 import { useSteps } from "context-api/step";
-import { useForm } from "context-api/form";
+import { useAppState } from "context-api/app-state-context";
 
 const Footer = () => {
   const { currentStep, setCurrentStep } = useSteps();
-  const { formik } = useForm();
+  const { formik } = useAppState();
 
   const onSubmit = () => {
     if (currentStep === 1) {

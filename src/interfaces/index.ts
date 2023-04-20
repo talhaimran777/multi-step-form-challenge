@@ -25,10 +25,19 @@ export interface AddonProps {
   description: string;
 }
 
+export interface PriceInterface {
+  price: number;
+  pricePostfix: string;
+}
+
+export interface PricingInterface {
+  [key: string]: PriceInterface;
+}
+
 export interface PlanInterface {
   isActive: boolean;
   title: string;
-  price: string;
+  pricing: PricingInterface;
   image: string;
 }
 
@@ -49,9 +58,21 @@ export interface FormData {
   phoneNumber: string;
 }
 
-export interface FormContextProps {
+export enum PlanTypes {
+  Monthly = "monthly",
+  Yearly = "yearly"
+}
+
+export interface AppState {
+  name: string;
+  email: string;
+  phoneNumber: string;
+  planType?: PlanTypes;
+}
+
+export interface AppStateContextProps {
   formik: any;
   setFormik: (value: any) => void;
-  data: FormData;
-  setData: (value: FormData) => void;
+  data: AppState;
+  setData: (value: AppState) => void;
 }

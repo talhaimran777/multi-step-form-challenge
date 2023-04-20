@@ -4,12 +4,12 @@ import * as Yup from "yup";
 import { useSteps } from "context-api/step";
 import { useFormik } from "formik";
 import { useEffect } from "react";
-import { useForm } from "context-api/form";
-import { FormData } from "interfaces/index";
+import { useAppState } from "context-api/app-state-context";
+import { AppState } from "interfaces/index";
 
 const Step1Content = () => {
   const { setCurrentStep, currentStep } = useSteps();
-  const { setFormik, data, setData } = useForm();
+  const { setFormik, data, setData } = useAppState();
 
   const formFormik = useFormik({
     initialValues: {
@@ -17,7 +17,7 @@ const Step1Content = () => {
       email: data.email,
       phoneNumber: data.phoneNumber,
     },
-    onSubmit: (values: FormData) => {
+    onSubmit: (values: AppState) => {
       if (values.name && values.email && values.phoneNumber) {
         setCurrentStep(currentStep + 1);
         setData(values);
@@ -36,10 +36,9 @@ const Step1Content = () => {
   });
 
   useEffect(() => {
-    if (formFormik) {
-      setFormik(formFormik);
-    }
-  }, []);
+    if (formFormik) return;
+    setFormik(formFormik);
+  }, [formFormik, setFormik]);
 
   return (
     <>
