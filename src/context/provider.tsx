@@ -9,6 +9,8 @@ const Provider = ({ children }: ProviderProps) => {
     email: "",
     phoneNumber: "",
     planType: PlanTypes.Monthly,
+    plan: 1,
+    addons: [],
   };
 
   const [currentStep, setCurrentStep] = React.useState<number>(1);

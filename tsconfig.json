@@ -19,6 +19,8 @@
       "styles/*": ["./src/styles/*"],
       "images/*": ["./public/images/*"],
       "interfaces/*": ["./src/interfaces/*"],
+      "data/*": ["./src/data/*"],
+      "utils/*": ["./src/utils/*"],
       "context-api/*": ["./src/context/*"]
     }
   },

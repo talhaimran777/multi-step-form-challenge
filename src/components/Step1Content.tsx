@@ -5,7 +5,7 @@ import { useSteps } from "context-api/step";
 import { useFormik } from "formik";
 import { useEffect } from "react";
 import { useAppState } from "context-api/app-state-context";
-import { AppState } from "interfaces/index";
+import { FormState } from "interfaces/index";
 
 const Step1Content = () => {
   const { setCurrentStep, currentStep } = useSteps();
@@ -17,10 +17,14 @@ const Step1Content = () => {
       email: data.email,
       phoneNumber: data.phoneNumber,
     },
-    onSubmit: (values: AppState) => {
+    onSubmit: (values: FormState) => {
       if (values.name && values.email && values.phoneNumber) {
+        const name = values.name;
+        const email = values.email;
+        const phoneNumber = values.phoneNumber;
+
         setCurrentStep(currentStep + 1);
-        setData(values);
+        setData({ ...data, name, email, phoneNumber });
       }
     },
     validationSchema: Yup.object({
@@ -36,9 +40,10 @@ const Step1Content = () => {
   });
 
   useEffect(() => {
-    if (formFormik) return;
-    setFormik(formFormik);
-  }, [formFormik, setFormik]);
+    if (formFormik) {
+      setFormik(formFormik);
+    }
+  }, []);
 
   return (
     <>

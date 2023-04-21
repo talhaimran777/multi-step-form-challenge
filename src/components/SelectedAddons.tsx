@@ -1,9 +1,22 @@
+import { useAppState } from "context-api/app-state-context";
+import { fromAppState } from "utils/index";
+import SelectedAddon from "components/SelectedAddon";
+
 const SelectedAddons = () => {
+  const { data } = useAppState();
+  const { selectedAddons } = fromAppState(data);
+
   return (
-    <div className="flex items-center justify-between mt-3">
-      <h1 className="text-sm text-paragraph">Online Service</h1>
-      <p className="text-sm font-normal text-heading mb-[3px]">+$9/mo</p>
-    </div>
+    <>
+      {data.addons.length > 0 && <hr />}
+      {selectedAddons.map((addon) => (
+        <SelectedAddon
+          id={addon.id}
+          title={addon.title}
+          pricing={addon.pricing}
+        />
+      ))}
+    </>
   );
 };
 

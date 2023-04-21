@@ -6,11 +6,8 @@ const Footer = () => {
   const { formik } = useAppState();
 
   const onSubmit = () => {
-    if (currentStep === 1) {
-      formik.submitForm();
-    } else {
-      currentStep !== 4 && setCurrentStep(currentStep + 1);
-    }
+    if (currentStep === 1) return formik.submitForm();
+    currentStep !== 4 && setCurrentStep(currentStep + 1);
   };
 
   return (

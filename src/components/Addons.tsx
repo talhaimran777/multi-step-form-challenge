@@ -1,23 +1,19 @@
 import Addon from "components/Addon";
+import addons from "data/addons";
 
 const Addons = () => {
   return (
     <div className="mt-6">
-      <Addon
-        isActive={true}
-        title="Online service"
-        description="Access to multiplayer games"
-      />
-      <Addon
-        isActive={true}
-        title="Larger storage"
-        description="Extra 1TB of cloud save"
-      />
-      <Addon
-        isActive={false}
-        title="Customizable profile"
-        description="Custom theme on your profile"
-      />
+      {addons.map((addon, idx) => (
+        <div key={idx}>
+          <Addon
+            id={addon.id}
+            title={addon.title}
+            description={addon.description}
+            pricing={addon.pricing}
+          />
+        </div>
+      ))}
     </div>
   );
 };

@@ -19,11 +19,7 @@ export interface StepTextProps {
   description: string;
 }
 
-export interface AddonProps {
-  isActive: boolean;
-  title: string;
-  description: string;
-}
+export interface AddonProps extends AddonInterface {}
 
 export interface PriceInterface {
   price: number;
@@ -34,11 +30,18 @@ export interface PricingInterface {
   [key: string]: PriceInterface;
 }
 
-export interface PlanInterface {
-  isActive: boolean;
+export interface PlanAddonCommonInterface {
+  id: number;
   title: string;
   pricing: PricingInterface;
+}
+
+export interface PlanInterface extends PlanAddonCommonInterface {
   image: string;
+}
+
+export interface AddonInterface extends PlanAddonCommonInterface {
+  description: string;
 }
 
 export interface PlanProps extends PlanInterface {}
@@ -60,14 +63,19 @@ export interface FormData {
 
 export enum PlanTypes {
   Monthly = "monthly",
-  Yearly = "yearly"
+  Yearly = "yearly",
 }
 
-export interface AppState {
+export interface FormState {
   name: string;
   email: string;
   phoneNumber: string;
-  planType?: PlanTypes;
+}
+
+export interface AppState extends FormState {
+  planType: PlanTypes;
+  plan: number;
+  addons: number[];
 }
 
 export interface AppStateContextProps {
@@ -76,3 +84,5 @@ export interface AppStateContextProps {
   data: AppState;
   setData: (value: AppState) => void;
 }
+
+export interface SelectedAddonProps extends PlanAddonCommonInterface {}
