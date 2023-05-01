@@ -17,7 +17,7 @@ const steps: Step[] = [
 ];
 
 const Steps = () => {
-  const { currentStep, setCurrentStep } = useSteps();
+  const { currentStep } = useSteps();
 
   const Step = (step: Step, idx: number) => {
     const dynamicClasses =
@@ -29,7 +29,6 @@ const Steps = () => {
       <span
         key={idx}
         className={`h-8 w-8 rounded-full flex justify-center items-center ${dynamicClasses}`}
-        onClick={() => setCurrentStep(step.number)}
       >
         {step.number}
       </span>

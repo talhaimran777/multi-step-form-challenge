@@ -7,7 +7,7 @@ const Footer = () => {
 
   const onSubmit = () => {
     if (currentStep === 1) return formik.submitForm();
-    currentStep !== 4 && setCurrentStep(currentStep + 1);
+    setCurrentStep(currentStep + 1);
   };
 
   return (

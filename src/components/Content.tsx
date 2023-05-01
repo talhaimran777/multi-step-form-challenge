@@ -2,6 +2,7 @@ import Step1Content from "components/Step1Content";
 import Step2Content from "components/Step2Content";
 import Step3Content from "components/Step3Content";
 import Step4Content from "components/Step4Content";
+import Step5Content from "components/Step5Content";
 import { useSteps } from "context-api/step";
 
 const stepContent = (step: number) => {
@@ -17,6 +18,9 @@ const stepContent = (step: number) => {
 
     case 4:
       return <Step4Content />;
+
+    case 5:
+      return <Step5Content />;
   }
 };
 
