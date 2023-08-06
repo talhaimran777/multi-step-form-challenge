@@ -28,7 +28,7 @@ const Content = () => {
   const { currentStep } = useSteps();
 
   return (
-    <div className="bg-white px-6 py-8 rounded-xl mx-4 -mt-20">
+    <div className="bg-white px-6 py-8 rounded-xl mx-4 -mt-20 lg:-mt-0 lg:mx-0">
       {stepContent(currentStep)}
     </div>
   );

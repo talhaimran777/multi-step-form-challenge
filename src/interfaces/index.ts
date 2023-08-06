@@ -12,6 +12,7 @@ export interface InputGroupProps {
 export interface Step {
   number: number;
   key?: number;
+  label?: string;
 }
 
 export interface StepTextProps {

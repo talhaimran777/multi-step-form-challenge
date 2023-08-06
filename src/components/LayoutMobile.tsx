@@ -4,7 +4,7 @@ import Footer from "components/Footer";
 import NavigationBar from "components/NavigationBar";
 import { useSteps } from "context-api/step";
 
-const Layout = () => {
+const LayoutMobile = () => {
   const { currentStep } = useSteps();
 
   return (
@@ -16,4 +16,4 @@ const Layout = () => {
   );
 };
 
-export default Layout;
+export default LayoutMobile;

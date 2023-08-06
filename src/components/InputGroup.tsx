@@ -11,7 +11,7 @@ const InputGroup: React.FC<InputGroupProps> = ({
 }) => {
   return (
     <>
-      <label className="text-xs text-heading" htmlFor={name}>
+      <label className="text-xs lg:text-base text-heading" htmlFor={name}>
         {label}
       </label>
       <input

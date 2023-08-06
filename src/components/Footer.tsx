@@ -12,7 +12,7 @@ const Footer = () => {
 
   return (
     <div
-      className={`bg-white h-[72px] flex items-center px-3 fixed w-full bottom-0${
+      className={`bg-white h-[72px] flex items-center px-3 fixed lg:static w-full bottom-0 lg:bottom-auto lg:flex-1 lg:items-end ${
         currentStep !== 1 ? " justify-between" : " justify-end"
       }`}
     >

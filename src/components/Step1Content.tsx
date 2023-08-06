@@ -52,7 +52,7 @@ const Step1Content = () => {
         description="Please provide your name, email address, and phone number"
       />
       <form>
-        <div className="mb-2">
+        <div className="mb-2 lg:mb-8">
           <InputGroup
             name="name"
             label="Name"
@@ -62,7 +62,7 @@ const Step1Content = () => {
           />
         </div>
 
-        <div className="mb-2">
+        <div className="mb-2 lg:mb-8">
           <InputGroup
             name="email"
             label="Email Address"
