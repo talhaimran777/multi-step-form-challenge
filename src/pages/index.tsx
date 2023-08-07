@@ -16,7 +16,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>{width < breakpoint ? <LayoutMobile /> : <LayoutDesktop />}</main>
+      <main>
+        {width !== 0 ? width < breakpoint ? <LayoutMobile /> : <LayoutDesktop />: (
+          <>&nbsp;</>
+        )}
+      </main>
     </>
   );
 }
