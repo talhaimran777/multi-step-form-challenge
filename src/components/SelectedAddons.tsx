@@ -11,6 +11,7 @@ const SelectedAddons = () => {
       {data.addons.length > 0 && <hr />}
       {selectedAddons.map((addon) => (
         <SelectedAddon
+          key={addon.id}
           id={addon.id}
           title={addon.title}
           pricing={addon.pricing}
